@@ -1,7 +1,7 @@
 //import axios from 'axios';
 //import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useEffect, useState } from 'react';
+//import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { FaSearch } from 'react-icons/fa';
 import { useDispatch, useSelector } from 'react-redux';
@@ -17,12 +17,6 @@ function SearchArea(){
     const dispatch = useDispatch();
     const history = useHistory();
 
-/*
-"electronics",
-"jewelery",
-"men clothing",
-"women clothing"
-*/
 
     const searchProduct = async (param) =>{
         try{   

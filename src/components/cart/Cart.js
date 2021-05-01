@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { FaBroom } from 'react-icons/fa';
 import { useDispatch, useSelector } from 'react-redux';
 import { clearCart } from '../../redux/actions/cartActions';
-//import { cartVoice } from '../utilities';
+import { cartVoice } from '../utilities';
 import CartItem from './CartItem';
 
 function Cart(){
@@ -14,9 +14,7 @@ function Cart(){
 
     
     const calculateTotalCost = ()=>{
-        // let total = cartData.reduce((a,b)=>{
-        //     return ( a.quantity * a.product.price) + ( b.quantity * b.product.price)
-        // })
+        
         let total = [];
         let totalCalc;
         if(cartData){
@@ -33,10 +31,10 @@ function Cart(){
     }
 
     const handleClearCart = ()=>{
-        //cartVoice('Your cart is now empty.');
-        // if(cartData.length!==0){
+        cartVoice('Your cart is now empty.');
+        if(cartData.length!==0){
             dispatch(clearCart())
-        //};
+        };
     }
 
     useEffect(()=>{

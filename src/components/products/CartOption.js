@@ -6,14 +6,14 @@ import { nanoid } from 'nanoid';
 import { FaPlus, FaMinus, FaUndoAlt } from 'react-icons/fa';
 import { useDispatch, useSelector } from 'react-redux';
 import { setCart } from '../../redux/actions/cartActions';
-//import { cartVoice } from '../utilities';
+import { cartVoice } from '../utilities';
 import { animateCart } from '../../redux/actions/animationActions';
 
 
 function CartOption(){
 
     const [quantity,setQuantity] = useState(1);
-    const { product, cartData, animations } = useSelector(state => state);
+    const { product } = useSelector(state => state);
     const dispatch = useDispatch();
 
     const handleInc = ()=>{
@@ -38,14 +38,11 @@ function CartOption(){
             product
         }
 
-        //cartVoice('Item added to cart');
+        cartVoice('Item added to cart');
         dispatch(setCart(entry));
         dispatch(animateCart('scaleup'));
     }
         
-    // useEffect(()=>{
-    //     console.log(product, cartData);
-    // },[cartData])
 
     return (
         <div className="cart_option">

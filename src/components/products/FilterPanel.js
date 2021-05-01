@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+//import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setCategory, resetCategory } from '../../redux/actions/categoryActions';
 
@@ -17,12 +17,6 @@ function FilterPanel(){
     const handleReset = () => {
         dispatch(resetCategory())
     };
-
-    // useEffect(()=>{
-    //     console.log(categories);
-    // },[]);
-
-    
 
     return (
         <div className="filter_panel">
