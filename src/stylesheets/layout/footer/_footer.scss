@@ -1,0 +1,10 @@
+.App-footer {
+  @include uniform-sides-padded-container(1em);
+  @include border-top(1px, solid, var(--trans-dark-3));
+  background: var(--green-sea-d);
+  color: var(--trans-light-6);
+  @extend .flex-centered;
+  p {
+    @extend .text-xs;
+  }
+}

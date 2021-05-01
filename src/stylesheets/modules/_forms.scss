@@ -1,0 +1,92 @@
+.custom-form {
+  @include grid-container(0.5em);
+  width: 100%;
+  .input-label-field {
+    @include grid-container(0.5em);
+    label {
+      @include grid-container(0.5em);
+      @include two-sides-padded-container(0.5em, 1em);
+      //@include bordered-container(1px, solid, var(--trans-dark-2));
+      @include border-radius(2em);
+      background: #fff;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      align-content: center;
+      input,
+      textarea {
+        width: 100%;
+        border: none;
+        background: transparent;
+        outline: transparent;
+      }
+      textarea {
+        resize: none;
+      }
+    }
+    .input-error {
+      grid-column: 1/-1;
+      border: none;
+      color: var(--sunflower);
+      @extend .text-xs;
+      @extend .text-thin;
+    }
+  }
+  //   .form-control {
+  //     //@extend .flex-centered;
+  //     @extend .flex;
+  //     align-items: flex-start;
+  //     justify-content: stretch;
+  //     // @include grid-container(0);
+  //     // grid-template-columns: auto 1fr;
+  //     &:nth-child(3) {
+  //       min-height: 100%;
+  //       .input-label-field {
+  //         height: 100%;
+  //         // .form-icon {
+  //         //   align-self: flex-start;
+  //         // }
+  //         // label {
+  //         //   height: calc(100% - 2em);
+  //         // }
+  //       }
+  //     }
+  //     .form-icon {
+  //       @include four-sides-padded-container(1em, 1em, 1em, 0);
+  //       @extend .light-contrast-text;
+  //     }
+  //     .input-label-field {
+  //       @include grid-container(0.5em);
+  //       grid-template-columns: 1fr;
+  //       grid-auto-rows: 1fr auto;
+  //       width: calc(100% - 2em);
+  //       label {
+  //         @include two-sides-padded-container(1em, 1.5em);
+  //         @include bordered-container(1px, solid, var(--trans-dark-1));
+  //         background: var(--trans-light-1);
+  //         width: auto;
+
+  //         input,
+  //         textarea {
+  //           width: auto;
+  //           border: none;
+  //           background: transparent;
+  //           outline: transparent;
+  //         }
+  //         textarea {
+  //           width: 100%;
+  //           height: 100%;
+  //           resize: none;
+  //           //min-height: 100%;
+  //           //min-height: 45vh;
+  //         }
+  //       }
+  //       .input-error {
+  //         grid-column: 1/-1;
+  //         border: none;
+  //         color: var(--carrot);
+  //         @extend .text-xs;
+  //         @extend .text-thin;
+  //       }
+  //     }
+  //   }
+}

@@ -1,0 +1,82 @@
+.loading {
+  @extend .flex-centered;
+  @include uniform-sides-padded-container(1em);
+  justify-content: center;
+  align-items: center;
+  span.loading_icon {
+    margin-right: 0.5em;
+    svg {
+      color: var(--green-sea);
+      animation-name: loader;
+      animation-duration: 2s;
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite;
+      font-size: 2rem;
+      margin: 0;
+      padding: 0;
+    }
+  }
+  h4 {
+    color: var(--trans-dark-6);
+  }
+}
+
+.notfound {
+  @include grid-container(1em);
+  .notfound_msg {
+    @extend .flex-centered;
+    @include uniform-sides-padded-container(1em);
+    justify-content: center;
+    align-items: center;
+    span.notfound_icon {
+      margin-right: 0.5em;
+      svg {
+        color: var(--green-sea);
+        font-size: 2rem;
+        margin: 0;
+        padding: 0;
+      }
+    }
+    h4 {
+      color: var(--trans-dark-6);
+    }
+  }
+  .cta-search {
+    @include grid-container(1em);
+    ul {
+      list-style: none;
+    }
+  }
+}
+
+@keyframes loader {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner {
+  @extend .loading;
+  svg {
+    color: var(--green-sea);
+    animation-name: spinner;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    font-size: 2rem;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@keyframes spinner {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

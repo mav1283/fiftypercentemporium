@@ -1,0 +1,9 @@
+.price_tag {
+  @include grid-container(0.5em);
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  color: var(--green-sea);
+  p {
+    font-weight: 600;
+  }
+}

@@ -1,0 +1,5 @@
+//@import "./filter_panel";
+@import "./product_list";
+.main {
+  @include uniform-sides-padded-container(2em);
+}

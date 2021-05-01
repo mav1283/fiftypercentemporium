@@ -1,0 +1,17 @@
+.cart_option {
+  @include grid-container(1em);
+  .qty_calc {
+    @include grid-container(1em);
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    @include uniform-sides-padded-container(0.5em);
+    @include bordered-container(1px, solid, var(--trans-dark-3));
+    .qty_ctrls {
+      @include grid-container(0.5em);
+      grid-template-columns: auto 1fr auto;
+      svg {
+        font-size: 0.75rem;
+      }
+    }
+  }
+}

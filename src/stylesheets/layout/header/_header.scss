@@ -1,0 +1,30 @@
+@import "./logo";
+@import "./cart_link";
+.App-header {
+  @include grid-container(1em);
+  @include uniform-sides-padded-container(2em);
+  position: sticky;
+  align-items: center;
+  background: var(--green-sea);
+  // .mobile-menu-btn {
+  //   @include uniform-sides-padded-container(1em);
+  //   border: none;
+  //   background: transparent;
+  //   color: var(--trans-light-6);
+  //   cursor: pointer;
+  // }
+}
+
+/* Responsiveness */
+@media only screen and (min-width: 0px) {
+  .App-header {
+    grid-template-columns: 1fr;
+    @include border-bottom(1px, solid, var(--trans-light-2));
+  }
+}
+
+@media only screen and (min-width: 568px) {
+  .App-header {
+    grid-template-columns: 1fr auto auto;
+  }
+}

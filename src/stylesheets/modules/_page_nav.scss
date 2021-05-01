@@ -1,0 +1,14 @@
+.page_nav {
+  @extend .flex;
+  a {
+    @extend .flex-centered;
+    svg {
+      color: var(--green-sea);
+      font-size: 1.5rem;
+    }
+    span {
+      margin-left: 0.5em;
+      color: var(--trans-dark-9);
+    }
+  }
+}

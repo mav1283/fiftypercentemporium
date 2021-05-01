@@ -1,0 +1,93 @@
+.cart {
+  @include grid-container(1em);
+  .cart_header {
+    @include grid-container(1em);
+    grid-template-columns: 1fr auto;
+    align-items: center;
+  }
+  .cart_list {
+    @include grid-container(1em);
+    list-style: none;
+    align-items: start;
+    .cart_item {
+      @include grid-container(1em);
+      align-items: start;
+      @include uniform-sides-padded-container(1em);
+      @include bordered-container(1px, solid, var(--trans-dark-3));
+      background: #fff;
+      .cart_item_image {
+        @extend .flex-centered;
+        img {
+          width: 100%;
+          height: auto;
+          max-width: 100px;
+        }
+      }
+      .cart_item_details {
+        @include grid-container(0.5em);
+        align-items: start;
+      }
+      .cart_item_cta {
+        @include grid-container(1em);
+        grid-template-columns: repeat(2, 1fr);
+        align-items: start;
+        @include uniform-sides-padded-container(0.5em);
+        @include bordered-container(1px, solid, var(--trans-dark-3));
+        .cta_qty {
+          @include grid-container(1em);
+          grid-template-columns: auto 1fr;
+          .cta {
+            @include grid-container(0.5em);
+            grid-template-columns: repeat(2, 1fr);
+            align-items: start;
+          }
+        }
+        .cta_btn {
+          font-size: 1rem;
+          color: var(--alizarin);
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+  .cart_total {
+    justify-self: end;
+    .money {
+      color: var(--green-sea);
+    }
+  }
+}
+
+@media only screen and (min-width: 0px) {
+  .cart_item {
+    grid-template-columns: 1fr;
+    .cart_item_details {
+      text-align: center;
+      justify-items: center;
+    }
+  }
+}
+
+@media only screen and (min-width: 568px) {
+  .cart_item {
+    grid-template-columns: repeat(2, 1fr);
+    .cart_item_details {
+      text-align: left;
+      justify-items: start;
+    }
+    .cart_item_cta {
+      grid-column: 1 / -1;
+    }
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .cart_item {
+    grid-template-columns: 60px 1fr auto;
+    .cart_item_cta {
+      grid-column: 3;
+    }
+  }
+}

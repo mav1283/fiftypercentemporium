@@ -1,0 +1,7 @@
+.product_details {
+  @include grid-container(1em);
+
+  .card_solo {
+    justify-self: center;
+  }
+}

@@ -1,0 +1,49 @@
+.shopping_cart {
+  position: relative;
+  font-size: 2rem;
+  color: #fff;
+  &:hover {
+    cursor: pointer;
+  }
+  .cart_count {
+    position: absolute;
+    top: 0;
+    left: 1em;
+    @extend .flex-centered;
+    width: 0.5rem;
+    height: 0.5rem;
+    @include uniform-sides-padded-container(0.5em);
+    @include border-radius(50%);
+    font-size: 0.85rem;
+    font-weight: 600;
+    background: var(--sunflower);
+    color: var(--trans-dark-6);
+    z-index: 10;
+  }
+  svg {
+    transition: 0.2s ease-in-out;
+  }
+}
+
+.shopping_cart.animate {
+  svg {
+    transform: scale(2);
+    text-shadow: 0px 2px 2px var(--trans-dark-6);
+    //animation-name: animatecart;
+  }
+}
+
+// @keyframes animateCart {
+//   0% {
+//     transform: scale(1.5);
+//   }
+//   25% {
+//     transform: scale(0);
+//   }
+//   50% {
+//     transform: rotate(0deg);
+//   }
+//   100% {
+//     transform: rotate(360deg);
+//   }
+// }

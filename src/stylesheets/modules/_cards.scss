@@ -1,0 +1,74 @@
+.card {
+  @include grid-container(0);
+  @include bordered-container(1px, solid, var(--trans-dark-3));
+  background: #fff;
+  list-style: none;
+  &:hover {
+    cursor: pointer;
+  }
+  .card_image {
+    @extend .flex-centered;
+    @include uniform-sides-padded-container(1em);
+    overflow: hidden;
+    img {
+      width: 100%;
+      max-width: 200px;
+      height: auto;
+      margin: auto;
+      transition: 0.4s ease-in-out;
+      &:hover {
+        transform: scale(1.125);
+        cursor: pointer;
+      }
+    }
+  }
+  .card_details {
+    @include grid-container(0.5em);
+    @include uniform-sides-padded-container(1em);
+    @include border-top(1px, solid, var(--trans-dark-3));
+    align-content: start;
+    background: lighten($green_sea, 60);
+    //background: var(--clouds);
+    // .price_tag {
+    //   @include grid-container(0.5em);
+    //   grid-template-columns: auto 1fr;
+    //   align-items: center;
+    //   color: var(--green-sea);
+    //   p {
+    //     font-weight: 600;
+    //   }
+    // }
+    .category {
+      @extend .text-xs;
+      text-transform: capitalize;
+    }
+  }
+}
+
+.card_solo {
+  @extend .card;
+  // .card_details {
+  //   border-top: none;
+  // }
+}
+
+@media only screen and (min-width: 0px) {
+  .card_solo {
+    grid-template-columns: 1fr;
+    .card_details {
+      @include border-top(1px, solid, var(--trans-dark-3));
+      border-left: none;
+    }
+  }
+}
+
+@media only screen and (min-width: 375px) {
+  .card_solo {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 568px;
+    .card_details {
+      @include border-left(1px, solid, var(--trans-dark-3));
+      border-top: none;
+    }
+  }
+}

@@ -1,23 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect } from 'react';
+import { Header, Footer } from './components/layout';
+import { ProductDetails, ProductList } from './components/products';
+import { BrowserRouter as Router, Switch, Route  } from 'react-router-dom';
+import Cart from './components/cart/Cart';
+import SearchNotFound from './components/loading/SearchNotFound';
 
 function App() {
+
+  useEffect(()=>{
+    window.onbeforeunload = () => {
+      //localStorage.removeItem('isAuth');
+      localStorage.clear();
+    }
+  },[])
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <Header />
+          <main className="main" >
+            <Switch>
+              <Route path="/" exact component={ProductList} />
+              <Route path="/product/:productId" exact component={ProductDetails} />
+              <Route path="/cart" component={Cart} />
+              <Route path="/search_not_found" component={SearchNotFound} />
+            </Switch> 
+          </main>
+        <Footer />
+      </Router>
     </div>
   );
 }
